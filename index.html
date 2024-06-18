@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+    <!-- Metadatos -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <link rel="shortcut icon" href="img/logoJava.png" type="image/x-icon">
+    <title>JavaScript</title>
+    
+    <!---Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Iconos Boostrapt 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--  Styles for Dashboard -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!--Styles-->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!--iconos cambio Claro / Oscuro-->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+    <!--Fin Iconos Cambio Claro / Oscuro-->
+
+    <!---Boton de Cambio a Claro / Oscuro-->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Claro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Oscuro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!--fin de iconos cambio Claro / Oscuro-->
+
+    <!--Header-->
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+      <a class="navbar-bran col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"></a>
+      <ul class="navbar-nav flex-row d-md-none">
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </li>
+      </ul>
+      <div id="navbarSearch" class="navbar-search w-100 collapse">
+        <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Buscar.." aria-label="Search">
+      </div>
+    </header>
+    <!--Fin Header-->
+
+    <!--Contenedor Fluido-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--Sidebar-->
+        <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+          <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="sidebarMenuLabel"> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+            </div>
+            <!--Navbar Vertical-->
+            
+            <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+              <ul class="nav flex-column vh-100">
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="bi bi-house"></i>
+                    Aplicaciones js
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#app_js_1">
+                    <i class="bi bi-shop"></i>
+                    Almacen zapatos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_2">
+                    <i class="bi bi-clipboard-pulse"></i>
+                    Peso-Imc
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_3">
+                    <i class="bi bi-activity"></i>
+                    Presion alterial
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_4">
+                    <i class="bi bi-people"></i>
+                    Edades
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_5">
+                    <i class="bi bi-calculator"></i>
+                    Calculadora Peso ideal
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--Fin Navbar Vertical-->
+          </div>
+        </div>
+        <!---Fin Sidebar-->
+
+        <!--Contenido Principal App Main-->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <!--Titulo-->
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Aplicaciones Js</h1>
+          </div>
+          <!-- Contenedor -->
+          <div class="container  ">
+            <!--Row1 Formulario 1-->
+            <div id="app_js_1" class="row  d-flex justify-content-center align-items-center text-center">
+              <div class="col-md-10 py-5">
+                <h1> Descuentos de zapatos</h1>
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="n_zapatos" placeholder="Primero Número">
+                      <label for="floatingInput"><strong>Ingrese la cantidad de zapatos</strong></label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="pzapatos" placeholder="Segundo Número">
+                      <label for="floatingPassword"><strong>Precio de zapatos</strong></label>
+                    </div>
+                    
+                    <button class="w-100 btn btn-lg btn-primary" type="button"onclick="promocion()">Calcular</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">
+                      <p id="resultadoApp1" class="mt-3"></p></small>
+                  </form>
+                
+              </div>
+            </div>
+            <!--Fin Row1 Formulario 1--> 
+
+            <!--Row2 Formulario 2-->
+            <div id="app_js_2" class="row d-flex justify-content-center align-items-center text-center">
+              <div class="col-md-10 py-5">
+                <h1>IMC </h1>
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="peso" placeholder="Primero Número">
+                      <label for="floatingInput"><strong> Ingrese su peso</strong></label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="estatura" placeholder="Segundo Número">
+                      <label for="floatingPassword"><strong>Digite su estatura</strong></label>
+                    </div>
+                    
+                    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="calcular_imc()">Calcular</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">
+                      <p id="resultadoApp2" class="mt-3"></p></small>
+                  </form>
+                
+              </div>
+            </div>
+            <!--Fin Row2 Formulario 2-->
+
+            <!--Formulario 3-->
+            <div id="app_js_3" class="row d-flex justify-content-center align-items-center text-center">
+              <div class="col-md-10 py-5">
+                <h1>Presion Arterial</h1>
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="presion" placeholder="Primero Número">
+                      <label for="floatingInput"><strong>Digite su presion arterial</strong></label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="presion_arterial()">Calcular</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">
+                      <p id="resultadoApp3" class="mt-3"></p></small>
+                  </form>
+                
+              </div>
+            </div>
+            <!--Fin Row2 Formulario 3-->  
+            
+            
+            <!--Formulario 4-->
+
+
+
+
+            <div id="app_js_4" class="row d-flex justify-content-center align-items-center text-center">
+              <div class="col-md-10 py-5">
+                <h1>Rango de edad </h1>
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="edad" placeholder="Primero Número">
+                      <label for="floatingInput"><strong>Digite su edad</strong></label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="edad_()">Calcular</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">
+                      <p id="resultadoApp4" class="mt-3"></p></small>
+                  </form>
+              <!--Fin Row2 Formulario 4--> 
+              </div>
+            </div>
+
+            <div id="app_js_5" class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 py-5">
+                <div class="card mt-4">
+                  <div class="card-header">
+                      <h1 class="text-center"><img src="img/diagram.gif" alt="logo" width="90px">Calculadora Peso Ideal</h1>
+                  </div>
+                  <div class="card-body">
+                      <form id="Form_pesoideal">
+                          <div class="mb-3">
+                              <label for="sexo" class="form-label">sexo</label>
+                              <select class="form-select" id="sexo" required>
+                                  <option value="">Seleccione su sexo</option>
+                                  <option value="Masculino">hombre</option>
+                                  <option value="Femenino">mujer</option>
+                              </select>
+                          </div>
+                          <div class="mb-3">
+                              <label for="edad" class="form-label">Edad</label>
+                              <input type="number" class="form-control" id="edad" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="pesoActual" class="form-label">Peso actual (kg)</label>
+                              <input type="number" class="form-control" id="pesoActual" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="estatura" class="form-label">Altura (cm)</label>
+                              <input type="number" class="form-control" id="estatura" required>
+                          </div>
+                          <button type="submit" class="w-100 btn btn-lg btn-primary">Calcular Peso Ideal</button>
+                      </form>
+                      <div id="resultado" class="mt-4"></div>
+      
+                  </div>
+      
+              </div>
+
+
+                
+              </div>
+            </div>
+            
+            
+
+    
+
+
+
+          </div>
+          <!--Fin Contenedor-->
+        </main>
+        <!-- Fin contenido Principal -->
+      </div>
+    </div>
+    <!--Fin Contenedor Fluido-->
+
+    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
+    <!---Boostrap 5.3 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--Dashboard JS-->
+    <script src="js/dashboard.js"></script>
+    <!--Color-modes JS-->
+    <script src="js/color-modes.js"></script>
+
+
+
+
+  </body>
+
+</html>
